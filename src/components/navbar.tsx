@@ -122,7 +122,21 @@ export const HeroHeader = () => {
                     </div>
                   </div>
                 </div>
-                <div className="md:flex hidden ">
+                <div className="flex gap-[22px] items-center">
+                  <div className="flex gap-4 items-center">
+                    <Image
+                      src="/tg-blue.svg"
+                      alt="telegram"
+                      width={20}
+                      height={20}
+                    />
+                    <Image
+                      src="/twitter-black.svg"
+                      alt="twitter"
+                      width={30}
+                      height={30}
+                    />
+                  </div>
                   <Button asChild size="sm">
                     <Link href="#">
                       <span>Get Started</span>
