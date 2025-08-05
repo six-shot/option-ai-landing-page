@@ -12,7 +12,7 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: "Option AI",
-  description: "Option AI",
+  description: "The First AI-Powered Derivatives Trading Bot",
 };
 
 export default function RootLayout({
