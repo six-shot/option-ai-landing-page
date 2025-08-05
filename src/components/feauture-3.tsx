@@ -57,7 +57,7 @@ export default function Features3() {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
-      className="py-[138px]  "
+      className="pt-[138px] pb-[209px] "
     >
       <div className="@container md:px-[60px] px-5">
         <div className="text-center">
