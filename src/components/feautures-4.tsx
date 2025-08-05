@@ -53,7 +53,7 @@ export default function Features4() {
         backgroundRepeat: "no-repeat",
       }}
       id="feature"
-      className="pt-[185px] pb-[51px]"
+      className="pt-[185px] pb-[51px] px-[60px]"
     >
       <div className="max-w-[1440px] mx-auto mt-8 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-24">
         <div className="flex flex-col gap-y-[94px]">
