@@ -47,8 +47,8 @@ export default function HeroSection() {
             The First AI-Powered Derivatives <br /> Trading Bot
           </h1>
           <p className=" text-[#141414] leading-8 tracking-[0.27px]  md:text-[24px] text-base mt-8  text-center">
-            Effortless crypto options trading via Option AI's on-chain Telegram
-            bot for all traders.
+            Effortless crypto options trading via Option AI&apos;s on-chain
+            Telegram bot for all traders.
           </p>
 
           <div className="flex w-full   items-center  justify-center flex-row gap-3 md:mt-[48px] mt-8">
