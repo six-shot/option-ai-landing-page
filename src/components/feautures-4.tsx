@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import BlurImage from "./miscellaneous/blur-image";
 
 export default function Features4() {
   const fadeInLeft = {
@@ -109,7 +110,7 @@ export default function Features4() {
                     : "order-1 lg:order-2"
                 }`}
               >
-                <Image
+                <BlurImage
                   src={card.image}
                   alt={card.title}
                   width={762}

@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import React, { useState } from "react";
+import BlurImage from "./miscellaneous/blur-image";
 
 interface Feature {
   id: string;
@@ -155,7 +156,7 @@ export default function AnalysisChart() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="w-[860px h-[542px] rounded-[16px] bg-[#F7FBF1] flex justify-center items-center"
                     >
-                      <Image
+                      <BlurImage
                         src="/usdx.svg"
                         alt="usdx"
                         width={762}

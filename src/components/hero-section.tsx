@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { InfiniteSlider } from "./infinite-slider";
+import BlurImage from "./miscellaneous/blur-image";
 
 const sliderItems = [
   { text: "PRIVACY", icon: "/check.svg" },
@@ -69,7 +70,12 @@ export default function HeroSection() {
             </Button>
           </div>
           <section className="pt-[64px] w-full flex items-center justify-center ">
-            <Image src="/hero.svg" alt="hero-chart" width={1123} height={822} />
+            <BlurImage
+              src="/hero.svg"
+              alt="hero-chart"
+              width={1123}
+              height={822}
+            />
           </section>
         </div>
       </section>
