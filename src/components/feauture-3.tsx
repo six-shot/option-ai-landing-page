@@ -50,49 +50,56 @@ const features = [
 
 export default function Features3() {
   return (
-    <section
-      style={{
-        backgroundImage: 'url("/hero-mask.svg")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-      className="pt-[138px] pb-[209px] "
-    >
-      <div className="@container md:px-[60px] px-5">
-        <div className="text-center">
-          <h2 className="text-balance text-[48px] leading-[48px] font-extrabold tracking-[-0.48px] text-[#0E121B] [text-shadow:0px_12.096px_90.72px_rgba(152,152,152,0)]">
-            Empower Your Trading with <br />
-            Advanced Tools and Resources Options
-          </h2>
-        </div>
-        <div className="grid-cols-3 mx-auto mt-8 grid max-w-[1440px] gap-3  md:mt-[62px] ">
-          {features.map((feature) => (
-            <Card
-              key={feature.id}
-              className={`bg-[#F7FBF1]  transition-all duration-300 ease-in-out  hover:shadow-lg hover:shadow-zinc-950/10 cursor-pointer flex flex-col gap-6`}
-            >
-              <CardHeader>
-                <CardDecorator>
-                  <Image
-                    src={feature.icon}
-                    width={50}
-                    height={50}
-                    alt={feature.title.toLowerCase()}
-                  />
-                </CardDecorator>
-              </CardHeader>
+    <section className="relative">
+      {/* Background layer with opacity */}
+      <div
+        style={{
+          backgroundImage: 'url("/hero-mask.svg")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.4,
+        }}
+        className="absolute inset-0 -z-10"
+      />
 
-              <CardContent className="flex flex-col gap-2">
-                <p className="text-[#141414] text-[24px] font-black">
-                  {feature.title}
-                </p>
-                <p className="text-base  text-[#141414] font-medium ">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+      {/* Content layer without opacity */}
+      <div className="pt-[138px] pb-[209px] relative z-10">
+        <div className="@container md:px-[60px] px-5">
+          <div className="text-center">
+            <h2 className="text-balance text-[48px] leading-[48px] font-extrabold tracking-[-0.48px] text-[#0E121B] [text-shadow:0px_12.096px_90.72px_rgba(152,152,152,0)]">
+              Empower Your Trading with <br />
+              Advanced Tools and Resources Options
+            </h2>
+          </div>
+          <div className="grid-cols-3 mx-auto mt-8 grid max-w-[1440px] gap-3  md:mt-[62px] ">
+            {features.map((feature) => (
+              <Card
+                key={feature.id}
+                className={`bg-[#F7FBF1]  transition-all duration-300 ease-in-out  hover:shadow-lg hover:shadow-zinc-950/10 cursor-pointer flex flex-col gap-6`}
+              >
+                <CardHeader>
+                  <CardDecorator>
+                    <Image
+                      src={feature.icon}
+                      width={50}
+                      height={50}
+                      alt={feature.title.toLowerCase()}
+                    />
+                  </CardDecorator>
+                </CardHeader>
+
+                <CardContent className="flex flex-col gap-2">
+                  <p className="text-[#141414] text-[24px] font-black">
+                    {feature.title}
+                  </p>
+                  <p className="text-base  text-[#141414] font-medium ">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -46,80 +46,89 @@ export default function Features4() {
   ];
 
   return (
-    <div
-      style={{
-        backgroundImage: 'url("/hero-mask.svg")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-      id="feature"
-      className="pt-[47px] pb-[51px] px-[60px]"
-    >
-      <div className="max-w-[1440px] mx-auto ">
-        <div className="flex flex-col gap-y-[94px]">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="relative flex flex-col lg:flex-row gap-x-[62px]  items-center"
-            >
-              {/* Text Section */}
-              <motion.div
-                {...fadeInLeft}
-                className={`w-[500px]  flex gap-2 items-start flex-col z-[3] relative text-white  ${
-                  index === 0
-                    ? "order-2 lg:order-1"
-                    : index === 1
-                    ? "order-2 lg:order-2 lg:ml-[5%]"
-                    : "order-2 lg:order-1"
-                }`}
-              >
-                <div className="w-full flex flex-col gap-y-[24px] text-[#0E121B]">
-                  <h3 className="text-[48px] leading-[57px]   w-full font-extrabold">
-                    {card.title}
-                  </h3>
-                  <p className="w-full  text-[20px] leading-[24px]">
-                    {card.description}
-                  </p>
-                  <div className="flex gap-[27px] flex-col">
-                    {card.marks.map((mark, markIndex) => (
-                      <div key={markIndex} className="flex gap-3 items-center">
-                        <Image
-                          src="mark.svg"
-                          alt="mark"
-                          width={24}
-                          height={24}
-                        />
-                        <p className="text-[#0E121B] text-[16px] leading-[19px]">
-                          {mark}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
+    <div className="relative">
+      {/* Background layer with opacity */}
+      <div
+        style={{
+          backgroundImage: 'url("/hero-mask.svg")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.4,
+        }}
+        className="absolute inset-0 -z-10"
+      />
 
-              {/* Image Section */}
-              <motion.div
-                {...fadeInRight}
-                className={` w-[841px] h-[674px] flex items-center justify-center bg-[#F7FBF1] rounded-[16px] px-[32px] relative ${
-                  index === 0
-                    ? "order-1 lg:order-2"
-                    : index === 1
-                    ? "order-1 lg:order-1"
-                    : "order-1 lg:order-2"
-                }`}
+      {/* Content layer without opacity */}
+      <div id="feature" className="pt-[47px] pb-[51px] px-[60px] relative z-10">
+        <div className="max-w-[1440px] mx-auto ">
+          <div className="flex flex-col gap-y-[94px]">
+            {cards.map((card, index) => (
+              <div
+                key={index}
+                className="relative flex flex-col lg:flex-row gap-x-[62px]  items-center"
               >
-                <BlurImage
-                  src={card.image}
-                  alt={card.title}
-                  width={762}
-                  height={506}
-                  className="w-full h-auto object-contain"
-                />
-              </motion.div>
-            </div>
-          ))}
+                {/* Text Section */}
+                <motion.div
+                  {...fadeInLeft}
+                  className={`w-[500px]  flex gap-2 items-start flex-col z-[3] relative text-white  ${
+                    index === 0
+                      ? "order-2 lg:order-1"
+                      : index === 1
+                      ? "order-2 lg:order-2 lg:ml-[5%]"
+                      : "order-2 lg:order-1"
+                  }`}
+                >
+                  <div className="w-full flex flex-col gap-y-[24px] text-[#0E121B]">
+                    <h3 className="text-[48px] leading-[57px]   w-full font-extrabold">
+                      {card.title}
+                    </h3>
+                    <p className="w-full  text-[20px] leading-[24px]">
+                      {card.description}
+                    </p>
+                    <div className="flex gap-[27px] flex-col">
+                      {card.marks.map((mark, markIndex) => (
+                        <div
+                          key={markIndex}
+                          className="flex gap-3 items-center"
+                        >
+                          <Image
+                            src="mark.svg"
+                            alt="mark"
+                            width={24}
+                            height={24}
+                          />
+                          <p className="text-[#0E121B] text-[16px] leading-[19px]">
+                            {mark}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Image Section */}
+                <motion.div
+                  {...fadeInRight}
+                  className={` w-[841px] h-[674px] flex items-center justify-center bg-[#F7FBF1] rounded-[16px] px-[32px] relative ${
+                    index === 0
+                      ? "order-1 lg:order-2"
+                      : index === 1
+                      ? "order-1 lg:order-1"
+                      : "order-1 lg:order-2"
+                  }`}
+                >
+                  <BlurImage
+                    src={card.image}
+                    alt={card.title}
+                    width={762}
+                    height={506}
+                    className="w-full h-auto object-contain"
+                  />
+                </motion.div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

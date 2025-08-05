@@ -118,54 +118,61 @@ const TestimonialCard = ({
 
 export default function Trusted() {
   return (
-    <section
-      style={{
-        backgroundImage: 'url("/hero-mask.svg")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-      className="pt-[119px]"
-    >
-      <h2 className="text-balance text-center text-[48px] leading-[48px] font-extrabold tracking-[-0.48px] text-[#0E121B] [text-shadow:0px_12.096px_90.72px_rgba(152,152,152,0)] mb-[62px]">
-        What Traders Are Saying
-      </h2>
-      <div className="@container bg-[#F7FBF1]  px-[60px]">
-        <div className="hidden lg:block overflow-hidden mx-auto max-w-[1440px]">
-          <div className="grid grid-cols-2 h-[743px] py-[99px] ] rounded-[16px]  gap-6 relative z-0">
-            {/* Column 1 */}
-            <div className="col-span-1">
-              <InfiniteSlider
-                direction="vertical"
-                speed={50}
-                gap={24}
-                className=""
-              >
-                {testimonials.slice(0, 13).map((testimonial) => (
-                  <TestimonialCard
-                    key={testimonial.id}
-                    testimonial={testimonial}
-                  />
-                ))}
-              </InfiniteSlider>
-            </div>
+    <section className="relative">
+      {/* Background layer */}
+      <div
+        style={{
+          backgroundImage: 'url("/hero-mask.svg")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.4,
+        }}
+        className="absolute inset-0 -z-10"
+      />
 
-            {/* Column 2 */}
-            <div className="col-span-1">
-              <InfiniteSlider
-                direction="vertical"
-                speed={70}
-                gap={24}
-                reverse={true}
-                className=""
-              >
-                {testimonials.slice(0, 13).map((testimonial) => (
-                  <TestimonialCard
-                    key={testimonial.id}
-                    testimonial={testimonial}
-                  />
-                ))}
-              </InfiniteSlider>
+      {/* Content layer */}
+      <div className="pt-[119px] relative z-10">
+        <h2 className="text-balance text-center text-[48px] leading-[48px] font-extrabold tracking-[-0.48px] text-[#0E121B] [text-shadow:0px_12.096px_90.72px_rgba(152,152,152,0)] mb-[62px]">
+          What Traders Are Saying
+        </h2>
+        <div className="@container bg-[#F7FBF1]  px-[60px]">
+          <div className="hidden lg:block overflow-hidden mx-auto max-w-[1440px]">
+            <div className="grid grid-cols-2 h-[743px] py-[99px] ] rounded-[16px]  gap-6 relative z-0">
+              {/* Column 1 */}
+              <div className="col-span-1">
+                <InfiniteSlider
+                  direction="vertical"
+                  speed={50}
+                  gap={24}
+                  className=""
+                >
+                  {testimonials.slice(0, 13).map((testimonial) => (
+                    <TestimonialCard
+                      key={testimonial.id}
+                      testimonial={testimonial}
+                    />
+                  ))}
+                </InfiniteSlider>
+              </div>
+
+              {/* Column 2 */}
+              <div className="col-span-1">
+                <InfiniteSlider
+                  direction="vertical"
+                  speed={70}
+                  gap={24}
+                  reverse={true}
+                  className=""
+                >
+                  {testimonials.slice(0, 13).map((testimonial) => (
+                    <TestimonialCard
+                      key={testimonial.id}
+                      testimonial={testimonial}
+                    />
+                  ))}
+                </InfiniteSlider>
+              </div>
             </div>
           </div>
         </div>

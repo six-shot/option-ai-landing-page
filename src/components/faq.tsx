@@ -48,33 +48,41 @@ export default function FrequentlyAskedQuestions() {
   ];
 
   return (
-    <div
-      style={{
-        backgroundImage: 'url("/hero-mask.svg")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <div className="max-w-[1440px] mx-auto  pt-[191px] pb-[72px] md:px-[60px] px-5">
-        <div className="flex  justify-center  items-center ">
-          <h2 className="text-balance text-center text-[48px] leading-[48px] font-extrabold tracking-[-0.48px] text-[#0E121B] [text-shadow:0px_12.096px_90.72px_rgba(152,152,152,0)] ">
-            Frequently Asked <br /> Questions
-          </h2>
-        </div>
+    <div className="relative">
+      {/* Background layer */}
+      <div
+        style={{
+          backgroundImage: 'url("/hero-mask.svg")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.4,
+        }}
+        className="absolute inset-0 -z-10"
+      />
 
-        <div className="md:mt-[62px] mt-[28px] flex justify-center relative ">
-          <div className="  flex flex-col  w-full gap-8">
-            {data.map((item, index) => (
-              <Accordion
-                key={index}
-                index={index}
-                title={item.title}
-                answer={item.answer}
-                hoveredIndex={hoveredIndex}
-                setHoveredIndex={setHoveredIndex}
-              />
-            ))}
+      {/* Content layer */}
+      <div className="relative z-10">
+        <div className="max-w-[1440px] mx-auto  pt-[191px] pb-[72px] md:px-[60px] px-5">
+          <div className="flex  justify-center  items-center ">
+            <h2 className="text-balance text-center text-[48px] leading-[48px] font-extrabold tracking-[-0.48px] text-[#0E121B] [text-shadow:0px_12.096px_90.72px_rgba(152,152,152,0)] ">
+              Frequently Asked <br /> Questions
+            </h2>
+          </div>
+
+          <div className="md:mt-[62px] mt-[28px] flex justify-center relative ">
+            <div className="  flex flex-col  w-full gap-8">
+              {data.map((item, index) => (
+                <Accordion
+                  key={index}
+                  index={index}
+                  title={item.title}
+                  answer={item.answer}
+                  hoveredIndex={hoveredIndex}
+                  setHoveredIndex={setHoveredIndex}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
