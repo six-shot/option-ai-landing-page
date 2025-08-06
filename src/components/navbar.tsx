@@ -17,7 +17,18 @@ const menuItems = [
 
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
   const pathname = usePathname();
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="">
@@ -26,7 +37,11 @@ export const HeroHeader = () => {
         className=" fixed top-0 left-0 right-0 md:top-10 z-[200] "
       >
         <div className="px-[60px]">
-          <div className="max-w-[1440px] mx-auto px-5 md: w-full rounded-[24px]  bg-[#627D12] md:h-[92px] h-[72px] flex items-center">
+          <div
+            className={`max-w-[1440px] mx-auto px-5 md: w-full rounded-[24px] bg-[#627D12] md:h-[92px] h-[72px] flex items-center transition-all duration-300 ${
+              isScrolled ? "bg-[#627D12]/80 backdrop-blur-sm" : "bg-[#627D12]"
+            }`}
+          >
             <div className="transition-all duration-300 flex justify-between w-full">
               <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4 w-full">
                 <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
